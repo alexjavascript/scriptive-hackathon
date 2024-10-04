@@ -1,6 +1,6 @@
 import { Box, MeshTransmissionMaterial, Sphere, Text, useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
-import { useControls } from "leva";
+import { Leva, useControls } from "leva";
 import { useRef } from "react";
 
 // function Model() {
@@ -19,13 +19,14 @@ const S = () => {
   useFrame(() => {
     // mesh.current.rotation.z += 0.02
     // mesh.current.rotation.z -= 0.005
-    mesh.current.rotation.x += 0.005
+    // mesh.current.rotation.x += 0.005
     // mesh.current.rotation.x = Math.PI / 2
     mesh.current.rotation.z += 0.005
+    mesh.current.rotation.x = 1
+    // mesh.current.rotation.y += 0.005
 
-    mesh.current.rotation.y += 0.005
 
-
+    // mesh.current.scale.set(0.25, 0.25, 0.25)
     // mesh.current.scale.set(0.25, 0.25, 0.25)
 
 
@@ -35,9 +36,9 @@ const S = () => {
 
   const materialProps = useControls({
     thickness: { value: 0.6, min: 0, max: 3, step: 0.05 }, 
-    roughness: { value: 0.4, min: 0, max: 1, step: 0.1 }, 
+    roughness: { value: 0.3, min: 0, max: 1, step: 0.1 }, 
     transmission: {value: 1, min: 0, max: 1, step: 0.1}, 
-    ior: { value: 1, min: 0, max: 3, step: 0.1 }, 
+    ior: { value: 1.1, min: 0, max: 3, step: 0.1 }, 
     chromaticAberration: { value: 1, min: 0, max: 1}, 
     backside: { value: true},
   })
@@ -46,22 +47,33 @@ const S = () => {
 
   return (
     <group scale={viewport.width / 5}>
-      <Text fontSize={1} 
+      {/* <Text fontSize={1} 
         font="/fonts/MonumentExtended-Regular.otf"
         position={[0, 0, -3]}
         color={'white'}
       >
         Scriptive
+      </Text> */}
+
+      <Text fontSize={5} 
+        font="/fonts/MonumentExtended-Regular.otf"
+        position={[0, 0, -3]}
+        color={'white'}
+      >
+        S
       </Text>
+
+      <Leva hidden={true} />
+
       
       {/* <mesh ref={mesh} {...x.nodes.S} position={[0, 0, 0]}>
         <MeshTransmissionMaterial {...materialProps} />
       </mesh> */}
-{/* 
-<mesh ref={mesh} position={[0, 0, 0]} scale={3}>
+
+<mesh ref={mesh} position={[0, 0, 0]} scale={1.5}>
       <octahedronGeometry  args={[1, 0]} />
       <MeshTransmissionMaterial {...materialProps} />
-    </mesh> */}
+    </mesh>
 
       {/* <Box ref={mesh} rotation={[45, 45,45 ]} scale={2}>
         <MeshTransmissionMaterial {...materialProps} />
@@ -72,9 +84,9 @@ const S = () => {
       </Sphere> */}
 
 
-      <mesh ref={mesh} {...z.nodes.Torus} scale={10} position={[0, 0, 0]}>
+      {/* <mesh ref={mesh} {...z.nodes.Torus} scale={1} position={[0, 0, 0]}>
         <MeshTransmissionMaterial {...materialProps} />
-      </mesh>
+      </mesh> */}
 
       {/* <mesh {...y.nodes.Curve} scale={[0.25, 0.25, 0.25]} position={[0, 0, -2]} /> */}
     </group>

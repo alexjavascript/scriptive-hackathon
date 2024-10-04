@@ -25,13 +25,9 @@ const Hero = () => {
         </p>
 
         <h2>
-          {/* Your Digital  <br />
+          Your Digital  <br />
           Success <br />
-          is Scriptive */}
-
-          Creative Agency, <br />
-          from Brisbane, <br />
-          Australia
+          is Scriptive
         </h2>
 
         <p>
