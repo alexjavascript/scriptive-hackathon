@@ -9,7 +9,7 @@ import Link from 'next/link'
 const Hero = () => {
   return (
     <section className={styles.section}>
-      <Canvas style={{ backgroundColor: 'black', height: '100vh', width: '100%'}}>
+      <Canvas className={styles.canvas}>
         <directionalLight intensity={3} position={[0, 3, 2]} />
         <Environment preset="city" />
         {/* <Torus />   */}

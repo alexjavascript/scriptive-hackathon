@@ -1,3 +1,4 @@
+import { useMediaQuery } from "@mantine/hooks";
 import { Box, MeshTransmissionMaterial, Sphere, Text, useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { Leva, useControls } from "leva";
@@ -15,6 +16,8 @@ const S = () => {
   const z = useGLTF('/media/models/torus/model.glb');
   // const { nodes } = useGLTF('/media/models/laptop/laptop-colors.glb');
   const { viewport } = useThree()
+
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
 
   useFrame(() => {
     // mesh.current.rotation.z += 0.02
@@ -46,7 +49,7 @@ const S = () => {
   console.log(y)
 
   return (
-    <group scale={viewport.width / 5}>
+    <group >
       {/* <Text fontSize={1} 
         font="/fonts/MonumentExtended-Regular.otf"
         position={[0, 0, -3]}
@@ -55,13 +58,13 @@ const S = () => {
         Scriptive
       </Text> */}
 
-      <Text fontSize={5} 
+      {/* <Text fontSize={5} 
         font="/fonts/MonumentExtended-Regular.otf"
         position={[0, 0, -3]}
         color={'white'}
       >
         S
-      </Text>
+      </Text> */}
 
       <Leva hidden={true} />
 
@@ -70,7 +73,7 @@ const S = () => {
         <MeshTransmissionMaterial {...materialProps} />
       </mesh> */}
 
-<mesh ref={mesh} position={[0, 0, 0]} scale={2}>
+<mesh ref={mesh} position={[0, 0, 0]} scale={isDesktop ? 2.5 : 2.5}>
       <octahedronGeometry  args={[1, 0]} />
       <MeshTransmissionMaterial {...materialProps} />
     </mesh>
@@ -88,7 +91,7 @@ const S = () => {
         <MeshTransmissionMaterial {...materialProps} />
       </mesh> */}
 
-      {/* <mesh {...y.nodes.Curve} scale={[0.25, 0.25, 0.25]} position={[0, 0, -2]} /> */}
+      <mesh {...y.nodes.Curve} scale={[0.25, 0.25, 0.25]} position={[0, 0, -2]} />
     </group>
   )
 }
