@@ -70,7 +70,7 @@ const S = () => {
         <MeshTransmissionMaterial {...materialProps} />
       </mesh> */}
 
-<mesh ref={mesh} position={[0, 0, 0]} scale={1.5}>
+<mesh ref={mesh} position={[0, 0, 0]} scale={2}>
       <octahedronGeometry  args={[1, 0]} />
       <MeshTransmissionMaterial {...materialProps} />
     </mesh>
