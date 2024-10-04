@@ -38,7 +38,7 @@ const S = () => {
   })
 
   const materialProps = useControls({
-    thickness: { value: 0.6, min: 0, max: 3, step: 0.05 }, 
+    thickness: { value: 0.2, min: 0, max: 3, step: 0.05 }, 
     roughness: { value: 0.3, min: 0, max: 1, step: 0.1 }, 
     transmission: {value: 1, min: 0, max: 1, step: 0.1}, 
     ior: { value: 1.1, min: 0, max: 3, step: 0.1 }, 
@@ -91,7 +91,10 @@ const S = () => {
         <MeshTransmissionMaterial {...materialProps} />
       </mesh> */}
 
-      <mesh {...y.nodes.Curve} scale={[0.25, 0.25, 0.25]} position={[0, 0, -2]} />
+      <mesh {...y.nodes.Curve} 
+      // scale={[0.5, 0.5, 0.5]} 
+      scale={[0.25, 0.25, 0.25]} 
+      position={[0, 0, -2]} />
     </group>
   )
 }
