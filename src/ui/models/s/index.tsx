@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { useMediaQuery } from "@mantine/hooks";
 import { Box, MeshTransmissionMaterial, Sphere, Text, useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
