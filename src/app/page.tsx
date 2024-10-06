@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import styles from "./page.module.scss";
 import dynamic from "next/dynamic";
 import Link from "next/link";

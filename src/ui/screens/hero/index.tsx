@@ -1,8 +1,6 @@
 import { Canvas } from "@react-three/fiber";
-import Torus from "@/ui/models/torus";
 import styles from './index.module.scss';
 import { Environment } from "@react-three/drei";
-import Laptop from "@/ui/models/laptop";
 import S from "@/ui/models/s";
 import Link from 'next/link'
 
@@ -12,15 +10,12 @@ const Hero = () => {
       <Canvas className={styles.canvas}>
         <directionalLight intensity={3} position={[0, 3, 2]} />
         <Environment preset="city" />
-        {/* <Torus />   */}
-
-        {/* <Laptop />     */}
         <S />
       </Canvas>
 
       <div className={styles.content}>
       <p>
-        01 / Intro
+        01. Introduction
 
         </p>
 
@@ -39,7 +34,7 @@ const Hero = () => {
             <li>
             <Link className={styles.x} href="/">
           
-          Let's talk
+          Let&apos;s talk
           </Link>
             </li>
             <li>
